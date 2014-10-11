@@ -1,11 +1,10 @@
 <div id='container' ng-controller="LinksController">
-  <h2>LINKS!</h2>
-  {{ data.links }}
-  <div class="link" ng-repeat="link in data.links">
-    <span class="title">{{ link.title }}</span>
-    <span class="original">{{ link.url }}</span>
-    <div class="visits">
-      <span class="count">{{ link.visits }}</span>
-    </div>
+  <p><h2>LINKS!</h2></p>
+  <input ng-model="filter" placeholder="Search link">
+  <div class="link" ng-repeat="link in data.links | orderBy:'visits':!reverse | filter:filter">
+    <div class="visits"><span class="count">{{ link.visits }}</span></div>
+    <div class="title">{{link.title}}</div>
+    <div class="original">{{link.url}}</div>
+    <a class="title" ng-href="/api/links/{{ link.code }}">{{ link.code }}</a>
   </div>
 </div>
