@@ -1,6 +1,12 @@
-<div id='container'>
-<!-- Your code here -->
-
-</div>
+<form name="form" id='container' ng-controller = "ShortenController" ng-submit="addLink(link.url)">
+  <div class="form-group" ng-class="{
+    'has-error': form.url.$invalid && !form.url.$pristine,
+    'has-success': form.url.$valid
+  }">
+    <input class="form-control" type="url" name="url" ng-model='link.url' required>
+    <span class="help-block" ng-show="form.url.$invalid && !form.url.$pristine">That is not a valid url</span>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Link!</button>
+</form>
 
 

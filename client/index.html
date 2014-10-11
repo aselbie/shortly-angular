@@ -3,16 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <title>Shortly</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles/style.css" /> -->
   </head>
   <body>
-    <h1>Shortly</h1>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shortly</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/links">Links</a></li>
+            <li><a href="#/shorten">Shorten</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/signin">Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <div class="container-fluid" ng-view></div>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>
