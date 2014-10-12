@@ -1,10 +1,12 @@
-<div id='container' ng-controller="LinksController">
+<div class="col-md-6 col-md-offset-3" ng-controller="LinksController">
   <p><h2>LINKS!</h2></p>
-  <input ng-model="filter" placeholder="Search link">
+  <p><input class=" form-control col-md-6" ng-model="filter" placeholder="Search link"></p>
   <div class="link" ng-repeat="link in data.links | orderBy:'visits':!reverse | filter:filter">
-    <div class="visits"><span class="count">{{ link.visits }}</span></div>
+    <img src="../assets/redirect_icon.png">
+    <div class="visits"><span class="count">{{ link.visits }}</span><span>times</span></div>
     <div class="title">{{link.title}}</div>
     <div class="original">{{link.url}}</div>
-    <a class="title" ng-href="/api/links/{{ link.code }}">{{ link.code }}</a>
+    <a class="title" ng-href="/api/links/{{ link.code }}">/api/links/{{ link.code }}</a>
   </div>
+  <canvas class="col-md-6 col-md-offset-3"id="chart" width="400" height="400"></canvas>
 </div>

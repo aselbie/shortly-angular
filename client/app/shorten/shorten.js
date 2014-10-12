@@ -9,6 +9,9 @@ angular.module('shortly.shorten', [])
       data: {
         url: url
       }
+    })
+    .then(function(){
+      $location.path('/links');
     });
   };
 });
